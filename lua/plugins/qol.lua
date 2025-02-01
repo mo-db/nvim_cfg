@@ -24,7 +24,7 @@ return {
 	{
 		"mbbill/undotree",
 		config = function()
-			vim.keymap.set("n", "<leader>t", vim.cmd.UndotreeToggle)
+			vim.keymap.set("n", "<C-M-u>", vim.cmd.UndotreeToggle)
 		end,
 	},
   
@@ -58,10 +58,6 @@ return {
 
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs", -- Sets main module to use for opts
 		opts = {
@@ -70,6 +66,7 @@ return {
         "fish",
 				"c",
         "cpp",
+        "make",
 				"lua",
 				"luadoc",
         "html",
