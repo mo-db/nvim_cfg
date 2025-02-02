@@ -46,6 +46,20 @@ vim.keymap.set("n", "<C-M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-M-k>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<C-M-o>", "<cmd>copen<CR>")
 vim.keymap.set("n", "<C-M-i>", "<cmd>cclose<CR>")
+vim.api.nvim_create_user_command('Make',
+  function()
+    vim.cmd('silent make')
+    vim.cmd('copen')
+  end,
+  {})
+vim.api.nvim_create_user_command('Makr',
+  function(opts)
+    vim.cmd('silent make run')
+    vim.cmd('copen')
+  end,
+  {})
+vim.keymap.set('n', "<C-M-m>", ':Make<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', "<C-M-n>", ':Makr<CR>', { noremap = true, silent = true })
 
 
 -- [[ Basic Autocommands ]]
