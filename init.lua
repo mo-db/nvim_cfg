@@ -4,13 +4,14 @@ vim.g.maplocalleader = '//'
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true 
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- mouse mode for some actions
 vim.opt.mouse = "a"
 vim.opt.wrap = true
+vim.opt.colorcolumn = "81"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -58,8 +59,15 @@ vim.api.nvim_create_user_command('Makr',
     vim.cmd('copen')
   end,
   {})
+vim.api.nvim_create_user_command('Makc',
+  function(opts)
+    vim.cmd('silent make clean')
+    vim.cmd('copen')
+  end,
+  {})
 vim.keymap.set('n', "<C-M-m>", ':Make<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', "<C-M-n>", ':Makr<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', "<C-M-b>", ':Makc<CR>', { noremap = true, silent = true })
 
 
 -- [[ Basic Autocommands ]]

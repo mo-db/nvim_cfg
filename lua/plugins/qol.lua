@@ -13,21 +13,18 @@ return {
       },
     },
   },
-
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
-
 	{
 		"mbbill/undotree",
 		config = function()
 			vim.keymap.set("n", "<C-M-u>", vim.cmd.UndotreeToggle)
 		end,
 	},
-  
 	{ -- fzf in neovim, thats so gread!
 		"ibhagwan/fzf-lua",
     dependencies = { "echasnovski/mini.icons" },
