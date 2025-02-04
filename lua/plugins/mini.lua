@@ -1,6 +1,7 @@
 return {
   { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
+    version = '*',
     config = function()
       -- core
       require("mini.icons").setup()
