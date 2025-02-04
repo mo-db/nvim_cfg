@@ -85,7 +85,7 @@ return {
             green = "#2aa198",
             teal = "#93a1a1",
             sky = "#93a1a1",
-            sapphire = "#586e75",
+            sapphire = "#657b83",
             blue = "#268bd2",
             lavender = "#93a1a1",
             text = "#93a1a1",
