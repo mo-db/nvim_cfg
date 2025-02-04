@@ -1,17 +1,22 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '//'
 
+-- *.h files use C syntax instead of C++ 
+-- objc syntax instead of objcpp
+vim.g.c_syntax_for_h = true
+
+-- formating related settings
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = "81"
+vim.opt.wrap = true
 
 -- mouse mode for some actions
 vim.opt.mouse = "a"
-vim.opt.wrap = true
-vim.opt.colorcolumn = "81"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -31,7 +36,6 @@ end)
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus left" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus right" })
@@ -42,7 +46,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus upper" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Move half-down center"})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Move half-up center"})
 
--- quickfix
+-- quickfix keybindings 
 vim.keymap.set("n", "<C-M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-M-k>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<C-M-o>", "<cmd>copen<CR>")
@@ -70,16 +74,21 @@ vim.keymap.set('n', "<C-M-n>", ':Makr<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', "<C-M-b>", ':Makc<CR>', { noremap = true, silent = true })
 
 
--- [[ Basic Autocommands ]]
+-- [[ Autocommands ]]
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
 	end,
+})
+
+-- enable tree-sitter highlighting for c files
+vim.api.nvim_create_autocmd('FileType', { pattern = 'c',
+  callback = function(args)
+    vim.treesitter.start(args.buf, 'c')
+  end,
 })
 
 -- Bootstrap lazy.nvim

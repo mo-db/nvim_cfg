@@ -13,19 +13,7 @@ return {
       },
     },
   },
-	{
-		"folke/todo-comments.nvim",
-		event = "VimEnter",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
-	},
-	{
-		"mbbill/undotree",
-		config = function()
-			vim.keymap.set("n", "<C-M-u>", vim.cmd.UndotreeToggle)
-		end,
-	},
-	{ -- fzf in neovim, thats so gread!
+	{ -- fzf in neovim, thats great!
 		"ibhagwan/fzf-lua",
     dependencies = { "echasnovski/mini.icons" },
     opts = {},
@@ -52,32 +40,32 @@ return {
 			vim.keymap.set("n", "<leader>sr", require("fzf-lua").registers, { desc = "[S]earch [R]egisters" })
 		end,
 	},
-
-	{ -- Highlight, edit, and navigate code
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		main = "nvim-treesitter.configs", -- Sets main module to use for opts
-		opts = {
-			-- ensure_installed = {
-			-- 	"bash",
-			--      "fish",
-			-- 	"c",
-			--      "cpp",
-			--      "make",
-			-- 	"lua",
-			-- 	"luadoc",
-			--      "html",
-			--      "css",
-			-- 	"markdown",
-			-- 	"markdown_inline",
-			-- 	"vim",
-			-- 	"vimdoc",
-			-- },
-			auto_install = false,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-		},
-	},
+	-- { -- Highlight, edit, and navigate code
+		-- "nvim-treesitter/nvim-treesitter",
+	-- 	build = ":TSUpdate",
+	-- 	main = "nvim-treesitter.configs", -- Sets main module to use for opts
+  --  require'nvim-treesitter.configs'.setup {}
+	-- 	opts = {
+	-- 		-- ensure_installed = {
+	-- 		-- 	"bash",
+	-- 		--      "fish",
+	-- 		-- 	"c",
+	-- 		--      "cpp",
+	-- 		--      "make",
+	-- 		-- 	"lua",
+	-- 		-- 	"luadoc",
+	-- 		--      "html",
+	-- 		--      "css",
+	-- 		-- 	"markdown",
+	-- 		-- 	"markdown_inline",
+	-- 		-- 	"vim",
+	-- 		-- 	"vimdoc",
+	-- 		-- },
+	-- 		auto_install = false,
+	-- 		highlight = {
+	-- 			enable = true,
+	-- 			additional_vim_regex_highlighting = false,
+	-- 		},
+	-- 	},
+	-- },
 }
