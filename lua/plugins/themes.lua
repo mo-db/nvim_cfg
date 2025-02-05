@@ -112,6 +112,8 @@ return {
             Visual = { bg = colors.surface0 }, -- Visual mode selection
             Search = { bg = colors.sapphire, fg = "#eee8d5" },
             IncSearch = { bg = colors.sapphire, fg = "#eee8d5" },
+		        Function = { fg = colors.blue },
+		        ["@function.builtin"] = { fg = colors.blue },
 
             -- mini.nvim
             MiniStatuslineDevinfo = { bg = colors.surface0 },

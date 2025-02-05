@@ -40,6 +40,13 @@ return {
 			vim.keymap.set("n", "<leader>sr", require("fzf-lua").registers, { desc = "[S]earch [R]egisters" })
 		end,
 	},
+  {
+    'stevearc/quicker.nvim',
+    event = "FileType qf",
+    ---@module "quicker"
+    ---@type quicker.SetupOptions
+    opts = {},
+  },
 	-- { -- Highlight, edit, and navigate code
 		-- "nvim-treesitter/nvim-treesitter",
 	-- 	build = ":TSUpdate",
