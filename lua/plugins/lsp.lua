@@ -16,7 +16,13 @@ return {
     },
     config = function()
       require("lspconfig").clangd.setup {
-        cmd = { "clangd", "--header-insertion=never", "--background-index" },
+        cmd = { "clangd",
+          "--header-insertion=never",
+          "--clang-tidy",
+          "--background-index"
+        },
+        init_options = {
+        }
       }
       require("lspconfig").lua_ls.setup{}
 

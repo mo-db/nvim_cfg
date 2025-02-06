@@ -80,7 +80,7 @@ return {
             flamingo = "#93a1a1",
             pink = "#cb4b16",
             mauve = "#b58900",
-            red = "#93a1a1",
+            red = "#dc322f",
             maroon = "#93a1a1",
             peach = "#93a1a1",
             yellow = "#859900",

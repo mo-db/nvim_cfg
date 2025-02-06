@@ -42,15 +42,24 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus right" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus lower" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus upper" })
 
+vim.keymap.set("n", "<C-M-h>", "<cmd>vertical res -10<CR>")
+vim.keymap.set("n", "<C-M-l>", "<cmd>vertical res +10<CR>")
+vim.keymap.set("n", "<C-M-j>", "<cmd>res +10<CR>")
+vim.keymap.set("n", "<C-M-k>", "<cmd>res -10<CR>")
+vim.keymap.set("n", "<C-M-=>", "<cmd>wincmd =<CR>")
+
+vim.keymap.set("n", "<leader>wv", "<cmd>vsplit<CR>", { desc = "split vertical" })
+vim.keymap.set("n", "<leader>wh", "<cmd>split<CR>", { desc = "split horizontal" })
+
 -- overwrite C-d and C-u to center cursor after command
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Move half-down center"})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Move half-up center"})
 
 -- quickfix keybindings 
-vim.keymap.set("n", "<C-M-j>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<C-M-k>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-M-n>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-M-p>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<C-M-o>", "<cmd>copen<CR>")
-vim.keymap.set("n", "<C-M-i>", "<cmd>cclose<CR>")
+vim.keymap.set("n", "<C-M-i>", "<cmd>cclose<CR>") -- maybe if open esc
 vim.api.nvim_create_user_command('Make',
   function()
     vim.cmd('silent make')
@@ -69,9 +78,9 @@ vim.api.nvim_create_user_command('Makc',
     vim.cmd('copen')
   end,
   {})
-vim.keymap.set('n', "<C-M-m>", ':Make<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', "<C-M-n>", ':Makr<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', "<C-M-b>", ':Makc<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', "<leader>mm", ':Make<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', "<leader>mr", ':Makr<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', "<leader>mc", ':Makc<CR>', { noremap = true, silent = true })
 
 
 -- [[ Autocommands ]]
