@@ -20,6 +20,131 @@ Color: violet   #6c71c4   61      13
 Color: base1    #93a1a1   247     14
 Color: base3    #fdf6e3   230     15
 
+        "base03":  "#002b36",
+        "base02":  "#073642",
+        "base01":  "#586e75",
+        "base00":  "#657b83",
+        "base0":   "#839496",
+        "base1":   "#93a1a1",
+        "base2":   "#eee8d5",
+        "base3":   "#fdf6e3",
+        "yellow":  "#b58900",
+        "orange":  "#cb4b16",
+        "red":     "#dc322f",
+        "magenta": "#d33682",
+        "violet":  "#6c71c4",
+        "blue":    "#268bd2",
+        "cyan":    "#2aa198",
+        "green":   "#859900",
+
+// bearded var1
+blue: "#4db0f7",
+green: "#a5b82e",
+greenAlt: "#97e24c",
+orange: "#e8913b",
+pink: "#df96d9",
+purple: "#858bf7",
+red: "#f45645",
+salmon: "#f154a0",
+turquoize: "#26bbae",
+yellow: "#e2ae10",
+
+// bearded oceanic
+blue: "#5fb2df",
+green: "#97c892",
+greenAlt: "#A4EF58"
+orange: "#DC8255",
+pink: "#d194cd",
+purple: "#978dd6",
+red: "#B4552D",
+salmon: "#ee5d75",
+turquoize: "#59c6c8",
+yellow: "#f6cc73",
+};
+
+// better solarized
+black: "#000000",
+white: "#FFFFFF",
+base06: "#001e26",
+base05: "#002731",
+base04: "#00212B",
+base03: "#002B36",
+base02: "#073642",
+base01: "#586E75",
+base00: "#657B83",
+base0: "#839496",
+base1: "#93A1A1",
+base2: "#EEE8D5",
+base3: "#FDF6E3",
+yellow: "#B58900",
+orange: "#CB4B16",
+red0: "#DC322F",
+red1: "#D30102",
+red2: "#CF4B56",
+magenta0: "#D33682",
+magenta1: "#AB395B",
+violet: "#6C71C4",
+indigo: "#644EA0",
+blue: "#268BD2",
+cyan: "#2AA198",
+green: "#859900",
+teal0: "#005A6F",
+teal1: "#004454",
+teal2: "#003847",
+
+// selenized
+bg0: "#053d48",
+bg1: "#184956",
+fg0: "#ADBCBC",
+fg1: "#C8D7D8",
+red: "#FD564E",
+green: "#80B83C",
+yellow: "#e3b230",
+blue: "#0096F5",
+magenta: "#F275BE",
+cyan: "#39c7b9",
+violet: "#A58CEC",
+orange: "#ED8649",
+
+
+
+one monokai
+// One Dark Colors
+
+// Default
+$plain: #abb2bf;
+
+// Background
+$background: #282c34;
+
+// Caret
+$caret: #528bff;
+
+// Function params
+$pink: #e06c75;
+
+// Class name Identifiers,
+$cyan: #56b6c2;
+
+// String
+$lime: #98c379;
+
+// Keywords
+$purple: #c678dd;
+
+// Numbers, Constants, Markup attributes
+$brown: #d19a66;
+
+// Class name, Namespaces
+$gold: #e5c07b;
+
+// Method definitions, Function names
+$blue: #61afef;
+
+// Comments
+$comment: #5c6370;
+
+
 ## flexi
 ### Base
 | Name         | Hex        | RGB             |

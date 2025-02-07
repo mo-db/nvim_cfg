@@ -42,6 +42,16 @@ return {
     lazy = false, 
     priority = 1000,
     config = function()
+      local bin_fg = "#93a1a1"
+      local bin_mid = "#586e75"
+      local bin_lbg = "#073642"
+      local bin_bg = "#002b36"
+
+      -- local bin_fg = "#100F0F"
+      -- local bin_mid = "#6F6E69"
+      -- local bin_lbg = "#E6E4D9"
+      -- local bin_bg = "#FFFCF0"
+
       require("catppuccin").setup {
         color_overrides = {
           latte = {},
@@ -76,18 +86,18 @@ return {
             -- mantle = "#292c3c",
             -- crust = "#232634",
 
-            rosewater = "#93a1a1",
+            rosewater = "#eee8d5",
             flamingo = "#93a1a1",
             pink = "#cb4b16",
-            mauve = "#b58900",
+            mauve = "#859900",
             red = "#dc322f",
-            maroon = "#93a1a1",
-            peach = "#93a1a1",
-            yellow = "#859900",
+            maroon = "#6c71c4",
+            peach = "#6c71c4",
+            yellow = "#b58900",
             green = "#2aa198",
-            teal = "#93a1a1",
-            sky = "#93a1a1",
-            sapphire = "#657b83",
+            teal = "#2aa198",
+            sky = "#268bd2",
+            sapphire = "#268bd2",
             blue = "#268bd2",
             lavender = "#93a1a1",
             text = "#93a1a1",
@@ -101,33 +111,76 @@ return {
             surface0 = "#073642", -- seperator
             base = "#002b36",
             mantle = "#073642",
-            crust = "#002b36",
+            crust = "#073642",
           },
           macchiato = {},
-          mocha = {},
+          mocha = {
+            rosewater = bin_fg,
+            flamingo = bin_fg,
+            pink = bin_fg,
+            mauve = "#859900",
+            red = bin_fg,
+            maroon = bin_fg,
+            peach = bin_fg,
+            yellow = bin_fg,
+            green = "#2aa198",
+            teal = bin_fg,
+            sky = bin_fg,
+            sapphire = bin_fg,
+            blue = "#268bd2",
+            lavender = bin_fg,
+            text = bin_fg,
+            subtext1 = bin_fg,
+            subtext0 = bin_fg,
+            overlay2 = bin_fg, -- comments
+            overlay1 = bin_mid,
+            overlay0 = bin_mid,
+            surface2 = bin_mid,
+            surface1 = bin_mid, -- SignColumn
+            surface0 = bin_lbg, -- seperator
+            base = bin_bg,
+            mantle = bin_lbg,
+            crust = bin_lbg,
+          },
         },
         custom_highlights = function(colors)
           return {
             -- editor
             Visual = { bg = colors.surface0 }, -- Visual mode selection
-            Search = { bg = colors.sapphire, fg = "#eee8d5" },
-            IncSearch = { bg = colors.sapphire, fg = "#eee8d5" },
+            Search = { bg = colors.sapphire, fg = colors.rosewater },
+            IncSearch = { bg = colors.sapphire, fg = colors.rosewater },
 		        Function = { fg = colors.blue },
+		        Constant = { fg = colors.text },
+		        Comment = { fg = colors.surface1 },
+            Number = { fg = colors.text },
+            Boolean = { fg = colors.text },
+            Macro = { fg = colors.maroon },
+            -- Define = { fg = colors.mauve },
+
+            -- tree-sitter
 		        ["@function.builtin"] = { fg = colors.blue },
+	          ["@parameter"] = { fg = colors.text },
+		        ["@variable.parameter"] = { fg = colors.text },
+            ["@constant.builtin"] = { fg = colors.text },
+            ["@string.regexp"] = { fg = colors.text },
+
+            -- markdown
+            markdownCode = { fg = colors.green },
+            markdownCodeBlock = { fg = colors.green },
 
             -- mini.nvim
             MiniStatuslineDevinfo = { bg = colors.surface0 },
             MiniStatuslineFileinfo = { bg = colors.surface0 },
-            MiniStatuslineModeCommand = { bg = colors.mauve },
-            MiniStatuslineModeInsert = { bg = colors.yellow },
+            MiniStatuslineModeCommand = { bg = colors.yellow},
+            MiniStatuslineModeInsert = { bg = colors.green},
             MiniStatuslineModeNormal = { bg = colors.blue },
             MiniStatuslineModeOther = { bg = colors.blue },
             MiniStatuslineModeReplace = { bg = colors.pink },
-            MiniStatuslineModeVisual = { bg = colors.green },
+            MiniStatuslineModeVisual = { bg = colors.mauve},
           }
         end,
       }
-      vim.cmd.colorscheme('catppuccin-frappe')
+      vim.cmd.colorscheme('catppuccin-mocha')
     end,
   },
   { '2giosangmitom/nightfall.nvim', 
@@ -142,12 +195,6 @@ return {
     config = function()
       -- shusia, espresso, maia, andromeda, atlantis, default
       vim.g.sonokai_style = 'shusia'
-    end,
-  },
-  { 'navarasu/onedark.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
     end,
   },
   {
