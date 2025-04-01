@@ -5,6 +5,8 @@ return {
     config = function()
       -- core
       require("mini.icons").setup()
+      require("mini.snippets").setup()
+      require("mini.completion").setup()
       require("mini.files").setup()
       vim.keymap.set("n", "-", function()
         if not require("mini.files").close() then

@@ -20,6 +20,7 @@ return {
 		config = function()
       local actions = require("fzf-lua").actions
       require("fzf-lua").setup({
+        fzf_colors = { false },
         grep = {
           actions = {
             ['ctrl-alt-o'] = {

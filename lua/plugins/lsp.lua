@@ -15,14 +15,14 @@ return {
       },
     },
     config = function()
+      require("lspconfig").basedpyright.setup {}
       require("lspconfig").clangd.setup {
         cmd = { "clangd",
+          "--fallback-style=LLVM",
           "--header-insertion=never",
           "--clang-tidy",
           "--background-index"
         },
-        init_options = {
-        }
       }
       require("lspconfig").lua_ls.setup{}
 
