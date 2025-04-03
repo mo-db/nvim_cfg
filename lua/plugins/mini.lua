@@ -1,12 +1,12 @@
 return {
   { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
-    version = '*',
+    version = false,
     config = function()
       -- core
       require("mini.icons").setup()
       require("mini.snippets").setup()
-      require("mini.completion").setup()
+      -- require("mini.completion").setup()
       require("mini.files").setup()
       vim.keymap.set("n", "-", function()
         if not require("mini.files").close() then
@@ -19,7 +19,7 @@ return {
       require("mini.comment").setup()
       require("mini.cursorword").setup()
       require("mini.starter").setup()
-      require("mini.operators").setup()
+      -- require("mini.operators").setup()
     end,
   },
 }
